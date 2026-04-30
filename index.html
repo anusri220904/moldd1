@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MOLDD | 3D Printed Decor</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="nav-container">
+            <div class="logo" onclick="showPage('home')">MOLDD</div>
+            <div class="nav-right" onclick="showCart()">
+                <span>🛒 <span id="cart-count">0</span></span>
+            </div>
+        </div>
+    </header>
+
+    <!-- HOME PAGE -->
+    <div id="home-page">
+        <section class="hero">
+            <div class="hero-content">
+                <h1>MOLDD</h1>
+                <button class="cta-btn" onclick="document.getElementById('cat-nav').scrollIntoView({behavior: 'smooth'})">Explore Collection</button>
+            </div>
+        </section>
+
+        <section class="categories-nav" id="cat-nav">
+            <p class="tagline">Curated 3D Categories</p>
+            <div class="cat-item" onclick="showPage('affordable')">🛡️ AFFORDABLE HELMET STANDS</div>
+            <div class="cat-item" onclick="showPage('premium')">👑 PREMIUM HELMET STANDS</div>
+            <div class="cat-item" onclick="showPage('anime')">👺 ANIME DECOR & KEYRINGS</div>
+        </section>
+    </div>
+
+    <!-- CATEGORY PAGE -->
+    <div id="category-page" style="display:none;">
+        <div class="container">
+            <button class="back-btn" onclick="showPage('home')">← BACK</button>
+            <h2 id="category-title" class="section-title">Category Name</h2>
+            <div id="product-list" class="grid"></div>
+        </div>
+    </div>
+
+    <!-- CART PAGE -->
+    <div id="cart-page" style="display:none;">
+        <div class="container">
+            <button class="back-btn" onclick="showPage('home')">← CONTINUE SHOPPING</button>
+            <h2 class="section-title">Your Cart</h2>
+            <div id="cart-items"></div>
+            
+            <div class="checkout-box">
+                <h3>Payment Method</h3>
+                <div class="payment-options">
+                    <label>
+                        <input type="radio" name="payment" value="prepaid" checked onclick="updateTotal()"> 
+                        Prepaid (Standard Price)
+                    </label>
+                    <label>
+                        <input type="radio" name="payment" value="cod" onclick="updateTotal()"> 
+                        COD (₹100 Extra Charge)
+                    </label>
+                </div>
+                <div class="total-display">
+                    <h3>Total Amount: ₹<span id="final-total">0</span></h3>
+                    <button class="whatsapp-btn" onclick="sendToWhatsApp()">CONFIRM ON WHATSAPP</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-logo">MOLDD</div>
+        <p>Precision 3D Printed Solutions</p>
+        <p style="font-size: 0.8rem; color: #999;">© 2026 MOLDD CREATIONS LMT</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
